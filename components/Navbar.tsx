@@ -6,17 +6,17 @@ import { RefObject, useEffect, useState } from "react";
 
 interface NavbarProps {
   refs: Array<RefObject<HTMLDivElement>>;
-  scrollToAbout: () => void;
   scrollToSkills: () => void;
   scrollToPortfolio: () => void;
+  scrollToExperience: () => void;
   scrollToContact: () => void;
 }
 
 export const Navbar = ({
   refs,
-  scrollToAbout,
   scrollToSkills,
   scrollToPortfolio,
+  scrollToExperience,
   scrollToContact,
 }: NavbarProps) => {
   const [currentSection, setCurrentSection] = useState("");
@@ -60,16 +60,6 @@ export const Navbar = ({
         <nav
           className={`
         ${
-          currentSection === "about" ? "text-white" : "text-gray-400"
-        } font-light`}
-        >
-          <Link href="/" onClick={() => scrollToAbout()}>
-            About
-          </Link>
-        </nav>
-        <nav
-          className={`
-        ${
           currentSection === "skills" ? "text-white" : "text-gray-400"
         } font-light`}
         >
@@ -85,6 +75,16 @@ export const Navbar = ({
         >
           <Link href="/" onClick={() => scrollToPortfolio()}>
             Portfolio
+          </Link>
+        </nav>
+        <nav
+          className={`
+        ${
+          currentSection === "about" ? "text-white" : "text-gray-400"
+        } font-light`}
+        >
+          <Link href="/" onClick={() => scrollToExperience()}>
+            Experience
           </Link>
         </nav>
         <nav

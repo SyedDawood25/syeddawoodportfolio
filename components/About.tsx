@@ -1,13 +1,9 @@
 "use client";
 
-import { RefObject, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 
-interface AboutProps {
-  aboutRef: RefObject<HTMLDivElement>;
-}
-
-export const About = ({ aboutRef }: AboutProps) => {
+export const About = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const [clip, setClip] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -20,7 +16,6 @@ export const About = ({ aboutRef }: AboutProps) => {
 
   return (
     <section
-      ref={aboutRef}
       id="about"
       className="flex flex-col bg-[#B3B0C5] px-8 sm:px-16 lg:py-24 py-16 gap-y-6 items-center justify-center"
     >

@@ -11,19 +11,19 @@ export const Portfolio = ({ portfolioRef }: PortfolioProps) => {
     <section
       ref={portfolioRef}
       id="portfolio"
-      className="flex flex-col items-center justify-center gap-y-12 pt-16 lg:py-24 px-12 bg-[#B3B0C5]"
+      className="flex flex-col items-center justify-center gap-y-12 py-16 lg:py-24 px-12 bg-[#B3B0C5]"
     >
       <h1 className="text-4xl lg:text-5xl font-bold text-[#110e1b]">
         Portfolio
       </h1>
 
-      <div className="grid xl:grid-cols-3 gap-6 w-full justify-center">
+      <div className="grid 2xl:grid-cols-3 gap-8 w-full justify-center">
         {portfolio.map(
           ({ title, image, description, tools, toolIcons, webSrc }, index) => (
             <div
               className={
                 index === 0
-                  ? "max-lg:col-span-1 max-lg:mb-0 max-lg:flex max-lg:w-full max-lg:justify-center max-xl:col-span-2 max-xl:mb-12 max-xl:flex max-xl:w-full max-xl:justify-center"
+                  ? "max-xl:col-span-1 max-2xl:col-span-2 flex max-2xl:w-full justify-center"
                   : ""
               }
             >

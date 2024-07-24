@@ -85,7 +85,7 @@ const portfolio = [
       "/TypeScript.svg",
       "/RapidAPI.svg",
     ],
-    webSrc: "https://walterwally.vercel.app/",
+    webSrc: "https://car-showcase-gamma-jade.vercel.app/",
   },
   {
     title: "Tweets App",
@@ -106,7 +106,7 @@ const portfolio = [
       "/Prisma.svg",
       "/PostgresSQL.svg",
     ],
-    webSrc: "https://walterwally.vercel.app/",
+    webSrc: "https://tweetsapp.vercel.app/",
   },
 ];
 
