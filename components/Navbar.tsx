@@ -1,49 +1,17 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { RefObject, useEffect, useState } from "react";
 
 interface NavbarProps {
-  refs: Array<RefObject<HTMLDivElement>>;
   scrollToSkills: () => void;
   scrollToPortfolio: () => void;
   scrollToExperience: () => void;
-  scrollToContact: () => void;
 }
 
 export const Navbar = ({
-  refs,
   scrollToSkills,
   scrollToPortfolio,
   scrollToExperience,
-  scrollToContact,
 }: NavbarProps) => {
-  const [currentSection, setCurrentSection] = useState("");
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setCurrentSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 } // Adjust the threshold as needed
-    );
-
-    refs.forEach((ref) => {
-      if (ref.current) observer.observe(ref.current);
-    });
-
-    return () => {
-      refs.forEach((ref) => {
-        if (ref.current) observer.unobserve(ref.current);
-      });
-    };
-  }, []);
-
   return (
     <header className="flex fixed z-20 items-center px-6 sm:px-12 py-6 w-full justify-between bg-[#110e1b] shadow-lg shadow-black/40">
       <div className="flex">
@@ -57,44 +25,19 @@ export const Navbar = ({
       </div>
 
       <div className="flex gap-x-2 sm:gap-x-4 text-sm sm:text-xl">
-        <nav
-          className={`
-        ${
-          currentSection === "skills" ? "text-white" : "text-gray-400"
-        } font-light`}
-        >
+        <nav className="text-white font-light">
           <Link href="/" onClick={() => scrollToSkills()}>
             Skills
           </Link>
         </nav>
-        <nav
-          className={`
-        ${
-          currentSection === "portfolio" ? "text-white" : "text-gray-400"
-        } font-light`}
-        >
+        <nav className="text-white font-light">
           <Link href="/" onClick={() => scrollToPortfolio()}>
             Portfolio
           </Link>
         </nav>
-        <nav
-          className={`
-        ${
-          currentSection === "about" ? "text-white" : "text-gray-400"
-        } font-light`}
-        >
+        <nav className="text-white font-light">
           <Link href="/" onClick={() => scrollToExperience()}>
             Experience
-          </Link>
-        </nav>
-        <nav
-          className={`
-        ${
-          currentSection === "contact" ? "text-white" : "text-gray-400"
-        } font-light`}
-        >
-          <Link href="/" onClick={() => scrollToContact()}>
-            Contact
           </Link>
         </nav>
       </div>

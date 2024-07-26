@@ -110,4 +110,34 @@ const portfolio = [
   },
 ];
 
-export { skills, portfolio };
+const experience = [
+  {
+    startYear: 2023,
+    endYear: 2023,
+    startMonth: "July",
+    endMonth: "August",
+    title: "AI and Copilot Intern",
+    company: "Mazik Global Pakistan",
+    description:
+      "Worked as a member of the Artificial Intelligence and Copilot Development team to develop Copilot apps powered by Microsoft Azure OpenAI",
+  },
+  {
+    startYear: 2020,
+    endYear: 2021,
+    startMonth: "September",
+    endMonth: "January",
+    title: "Graphic Designing Intern",
+    company: "InformiaTech",
+    description:
+      "Worked as a member of the graphic designing team and mainly specialized in designing Logos, Social Media Posts, Business Cards, Envelopes and Letter Heads.",
+  },
+];
+
+const connections = {
+  email: "dawoodsyedsie001@gmail.com",
+  phone: "03181023236",
+  linkedin: "https://www.linkedin.com/in/syed-dawood-278917201",
+  github: "https://www.github.com/SyedDawood25",
+};
+
+export { skills, portfolio, experience, connections };

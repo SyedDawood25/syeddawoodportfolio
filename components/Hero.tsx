@@ -1,6 +1,12 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { IoIosArrowDown } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { FaPhone } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { TbBrandGithubFilled } from "react-icons/tb";
+import { ContactDropDown } from "./ContactDropDown";
 
 export const Hero = () => {
   return (
@@ -15,13 +21,29 @@ export const Hero = () => {
         <h3 className="text-3xl md:text-5xl font-bold">
           A Full Stack Web Developer
         </h3>
-        <Button
-          asChild
-          size={"lg"}
-          className="w-[200px] mt-4 rounded-full bg-[#0c1821] text-xl font-medium hover:bg-[#324a5f]"
-        >
-          <Link href="/">Contact Me</Link>
-        </Button>
+        <ContactDropDown
+          trigger={
+            <Button
+              asChild
+              size={"default"}
+              className="w-[200px] mt-4 rounded-full bg-[#0c1821] text-lg font-medium hover:bg-[#324a5f]"
+            >
+              <Link href="/">
+                Let's Connect{" "}
+                <span className="ml-3">
+                  <IoIosArrowDown color="#ffffff" size={20} />
+                </span>
+              </Link>
+            </Button>
+          }
+          items={["Email", "Phone", "LinkedIn", "Github"]}
+          icons={[
+            <MdEmail color="#fff" size={20} />,
+            <FaPhone color="#fff" size={20} />,
+            <FaLinkedinIn color="#fff" size={20} />,
+            <TbBrandGithubFilled color="#fff" size={20} />,
+          ]}
+        />
       </div>
 
       <div className="flex mt-8 sm:mt-0 lg:w-1/2 w-full justify-end">

@@ -21,7 +21,7 @@ export const PortfolioCard = ({
   toolIcons,
 }: PortfolioCardProps) => {
   return (
-    <Link href={webSrc}>
+    <Link href={webSrc} target="_blank">
       <CardContainer>
         <CardBody className="relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-[#110e1b] border-white/[0.2] w-[20rem] sm:w-[30rem] h-fit rounded-xl p-5 sm:p-6 border">
           <CardItem
